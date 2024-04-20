@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Page with JavaScript</title>
+</head>
+<body>
+  <button onclick="makePage()">Click Here</button>
+  <script>
+    function makePage() {
+      // Create h1 tag
+      const h1 = document.createElement('h1');
+      h1.textContent = 'I am h1';
+      document.body.appendChild(h1);
+
+      // Create paragraph
+      const paragraph = document.createElement('p');
+      paragraph.textContent = 'This is a paragraph';
+      document.body.appendChild(paragraph);
+
+      // Create list
+      const list = document.createElement('ul');
+      
+      // Create list items
+      const listItem1 = document.createElement('li');
+      listItem1.textContent = 'This is first';
+      list.appendChild(listItem1);
+
+      const listItem2 = document.createElement('li');
+      listItem2.textContent = 'This is second';
+      list.appendChild(listItem2);
+
+      document.body.appendChild(list);
+    }
+  </script>
+</body>
+</html>

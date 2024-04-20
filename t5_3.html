@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Button</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    #incrementButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #incrementButton:hover {
+      background-color: #45a049;
+    }
+
+    #countList {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #countList li {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul id="countList">
+
+    </ul>
+    <button id="incrementButton">Increment Count</button>
+  </div>
+
+  <script>
+    const button = document.getElementById("incrementButton");
+    const countList = document.getElementById("countList");
+    let count = 0;
+
+    button.addEventListener("click", function() {
+      count++;
+      const listItem = document.createElement("li");
+      listItem.textContent = `Count: ${count}`;
+      listItem.style.fontSize = `${16 + count}px`;
+      countList.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>

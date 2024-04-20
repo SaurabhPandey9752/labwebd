@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guessing Game</title>
+</head>
+<body>
+<h1>Guessing Game</h1>
+<p id="guessResult">Make a guess!</p>
+<input type="number" id="userGuess" placeholder="Enter your guess">
+<button id="submitGuess">Submit Guess</button>
+<button id="resetGame">Reset Game</button>
+<ul id="guessList"></ul>
+<script >// Generate a random number between 1 and 100
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    let guessCount = 0;
+    
+    document.getElementById("submitGuess").addEventListener("click", function() {
+        let userGuess = parseInt(document.getElementById("userGuess").value);
+        let guessResult = document.getElementById("guessResult");
+        let guessList = document.getElementById("guessList");
+    
+        if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+            guessResult.innerHTML = "Please enter a valid number between 1 and 100.";
+        } else {
+            guessCount++;
+            if (userGuess === randomNumber) {
+                guessResult.innerHTML = `Congratulations! You guessed the number ${randomNumber} correctly in ${guessCount} guesses.`;
+                guessResult.style.color = "green";
+                document.getElementById("userGuess").disabled = true;
+                document.getElementById("submitGuess").disabled = true;
+            } else if (userGuess < randomNumber) {
+                guessResult.innerHTML = "Too low. Try again!";
+                guessResult.style.color = "red";
+            } else {
+                guessResult.innerHTML = "Too high. Try again!";
+                guessResult.style.color = "red";
+            }
+            // Add guess to the list
+            let li = document.createElement("li");
+            li.textContent = userGuess;
+            if (userGuess < randomNumber) {
+                li.style.color = "blue";
+            } else if (userGuess > randomNumber) {
+                li.style.color = "red";
+            }
+            guessList.appendChild(li);
+        }
+    });
+    
+    document.getElementById("resetGame").addEventListener("click", function() {
+        // Reload the page to start a new game
+        location.reload();
+    });
+    </script>
+</body>
+</html>

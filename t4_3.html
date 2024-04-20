@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color and Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+
+        .light-green-bg {
+            background-color: #90ee90; /* Light green background color */
+        }
+
+        h1 {
+            color: black; /* Initial text color */
+            margin-top: 100px;
+            font-size: 24pt; /* Initial font size */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Welcome to the Webpage</h1>
+    <button id="changeButton" onclick="changeAppearance()">Change Appearance</button>
+
+    <script>
+        function changeAppearance() {
+            alert("Before assigning class attribute to the document object");
+            document.body.classList.add('light-green-bg'); // Assign class attribute
+            alert("After assigning class attribute to the document object");
+
+            var heading = document.getElementById('heading');
+            var button = document.getElementById('changeButton');
+
+            // Additional changes as per the task requirements
+            heading.style.color = 'red'; // Change text color to red
+            heading.style.fontSize = '48pt'; // Change font size to 48pt
+            heading.textContent = 'New Heading Text'; // Change text content
+
+            var newButton = document.createElement('button'); // Create a new button element
+            newButton.innerHTML = 'Click Me'; // Set button text
+            document.body.appendChild(newButton); // Append button to the body
+        }
+    </script>
+</body>
+</html>

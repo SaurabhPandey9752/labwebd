@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Languages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        h1,h2:hover{
+            text-decoration: underline;
+            columns: brown;
+        }
+        .column {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: #333;
+        }
+        ol {
+            padding-left: 20px;
+        }
+        ol[type="I"] {
+            list-style-type: upper-roman;
+        }
+        ol[type="i"] {
+            list-style-type: lower-roman;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Countries and their Languages</h1>
+    <div class="container">
+        <div class="column">
+            <ol type="I">
+            <h2>United States</h2>
+            <ol type="i">
+                <li>English</li>
+                <li>Spanish</li>
+            </ol>
+        </div>
+        <div class="column">
+            <h2>France</h2>
+            <ol type="i">
+                <li>French</li>
+                <li>German</li>
+            </ol>
+        </div>
+        <div class="column">
+            <h2>Japan</h2>
+            <ol type="i">
+                <li>Japanese</li>
+                <li>English</li>
+            </ol>
+     </ol>
+        </div>
+    </div>
+</body>
+</html>

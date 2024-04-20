@@ -1,0 +1,23 @@
+<head>
+    <style>
+    .element {
+     position: relative; /* Allow for absolute positioning within */
+     width: 200px; /* Example width */
+     height: 50px; /* Example height */
+     background-color: blue; /* Example styling */
+     color: white; /* Example styling */
+     text-align: center; /* Example styling */
+     animation: slide-in-out 2s ease-in-out 0.5s infinite alternate; }
+    @keyframes slide-in-out {
+     0% {
+     transform: translateX(-100%); /* Start offscreen to the left */
+     }
+     50% {
+     transform: translateX(0); /* Become fully visible in the middle */
+     }
+     100% {
+     transform: translateX(100%); /* Slide offscreen to the right */
+     }}
+    </style>
+    </head>
+    <div class="element">This element will slide in and out.</div>

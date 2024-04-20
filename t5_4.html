@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Rows to Table</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 300px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <table id="myTable">
+    <tr>
+      <th>Row</th>
+      <th>Sum</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </table>
+  <br>
+  <button id="addRowBtn">Add Row</button>
+
+  <script>
+    const addRowBtn = document.getElementById("addRowBtn");
+    const table = document.getElementById("myTable");
+
+    addRowBtn.addEventListener("click", function() {
+      const rows = table.getElementsByTagName("tr");
+      const rowCount = rows.length;
+
+      // Get the values of the last two rows
+      const lastRowValue = parseInt(rows[rowCount - 1].lastChild.innerText);
+      const secondLastRowValue = parseInt(rows[rowCount - 2].lastChild.innerText);
+
+      // Calculate the sum
+      const sum = lastRowValue + secondLastRowValue;
+
+      // Create a new row and insert it into the table
+      const newRow = document.createElement("tr");
+      const cell1 = document.createElement("td");
+      cell1.innerText = rowCount + 1;
+      const cell2 = document.createElement("td");
+      cell2.innerText = sum;
+      newRow.appendChild(cell1);
+      newRow.appendChild(cell2);
+
+      // Insert new row before the button
+      table.insertBefore(newRow, addRowBtn);
+    });
+  </script>
+</body>
+</html>

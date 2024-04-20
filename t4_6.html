@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Browser Versions</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-gap: 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .browser-icon {
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+        }
+
+        .version-number {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Set fixed heights for table rows */
+        table tr {
+            height: 100px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- First Row: Browser Icons -->
+        <table>
+            <tr>
+                <th><div class="browser-icon" style="background-image: url('chrome-icon.png');"></div></th>
+                <th><div class="browser-icon" style="background-image: url('firefox-icon.png');"></div></th>
+                <th><div class="browser-icon" style="background-image: url('edge-icon.png');"></div></th>
+                <th><div class="browser-icon" style="background-image: url('safari-icon.png');"></div></th>
+            </tr>
+        </table>
+        
+        <!-- Second Row: Version Numbers -->
+        <table>
+            <tr>
+                <td class="version-number">Latest Version: 98.0.4758.121</td>
+                <td class="version-number">Latest Version: 97.0</td>
+                <td class="version-number">Latest Version: 98.0.1108.57</td>
+                <td class="version-number">Latest Version: 15.4.1</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

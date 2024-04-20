@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content Replacement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .original-content {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .new-content {
+            background-color: #007bff;
+            color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dynamic Content Replacement</h1>
+    </header>
+    
+    <main>
+        <div class="original-content">
+            <h2>Original Content</h2>
+            <p>This is the original content of the main section.</p>
+            <button onclick="replaceContent()">Replace Content</button>
+        </div>
+    </main>
+
+    <script>
+        function replaceContent() {
+            var mainContent = document.querySelector('main');
+            var newContent = document.createElement('div');
+            newContent.className = 'new-content';
+            newContent.innerHTML = `
+                <h2>New Content</h2>
+                <p>This is the new content with different styles.</p>
+                <p>Click the button again to revert to the original content.</p>
+            `;
+            mainContent.innerHTML = ''; // Clear existing content
+            mainContent.appendChild(newContent); // Add new content
+        }
+    </script>
+</body>
+</html>

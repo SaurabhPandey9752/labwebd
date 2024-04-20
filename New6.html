@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Playing Card</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .card-container {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            perspective: 1000px; 
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            transition: transform 2s; 
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <img src="https://www.thebalancemoney.com/thmb/At8Phg5iioy6iKbid9EeDAKJFDc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/credit-card-664122404-5aa02284c673350037bce86d.jpg" alt="Playing Card" class="card">
+    </div>
+</body>
+</html>
+
+
+<div class="card">
+    <img src="product2.jpg" alt="Product 2">
+    <h2>Product 2</h2>
+    <p>Description of Product 2</p>
+    <button onclick="addItem('Product 2', this)">Add to Cart</button>
+    <i class="cart-icon"></i>
+    <i class="cart-tick">&#10004;</i>
+</div>
+<div class="card">
+    <img src="product3.jpg" alt="Product 3">
+    <h2>Product 3</h2>
+    <p>Description of Product 3</p>
+    <button onclick="addItem('Product 3', this)">Add to Cart</button>
+    <i class="cart-icon"></i>
+    <i class="cart-tick">&#10004;</i>
+</div>
+<div class="card">
+    <img src="product4.jpg" alt="Product 4">
+    <h2>Product 4</h2>
+    <p>Description of Product 4</p>
+    <button onclick="addItem('Product 4', this)">Add to Cart</button>
+    <i class="cart-icon"></i>
+    <i class="cart-tick">&#10004;</i>
+</div>
+<div class="card">
+    <img src="product5.jpg" alt="Product 5">
+    <h2>Product 5</h2>
+    <p>Description of Product 5</p>
+    <button onclick="addItem('Product 5', this)">Add to Cart</button>
+    <i class="cart-icon"></i>
+    <i class="cart-tick">&#10004;</i>
+</div>
+<div class="card">
+    <img src="product6.jpg" alt="Product 6">
+    <h2>Product 6</h2>
+    <p>Description of Product 6</p>
+    <button onclick="addItem('Product 6', this)">Add to Cart</button>
+    <i class="cart-icon"></i>
+    <i class="cart-tick">&#10004;</i>
+</div>
